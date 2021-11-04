@@ -1,12 +1,12 @@
 ## Instalação e execução
 
-1. git clone https://github.com/FLVieira/sync-api.git
-2. cd sync-api
-3. > \$ docker run --name sync-api-postgres -e POSTGRES_PASSWORD=1234 -p 5432:5432 -d postgres
-4. > yarn
-5. > yarn sequelize db:migrate
-6. > yarn sequelize db:seed:all
-7. > yarn dev
+> git clone https://github.com/FLVieira/sync-api.git
+> cd sync-api
+> docker run --name sync-api-postgres -e POSTGRES_PASSWORD=1234 -p 5432:5432 -d postgres
+> yarn
+> yarn sequelize db:migrate
+> yarn sequelize db:seed:all
+> yarn dev
 
 ## Rotas
 
