@@ -28,6 +28,8 @@ class SynchronizationController {
       migration, // is an object representing schema changes since last sync (or null if up to date or not supported)
     } = req.body;
 
+    console.log('Pull Changes: ', lastPulledAt, schemaVersion, migration);
+
     let visits = await Visit.findAll({ raw: true });
     visits = visits.map((visit) => {
       const newVisitObj = {};
@@ -52,6 +54,8 @@ class SynchronizationController {
       lastPulledAt, // the timestamp of the last successful pull (timestamp returned in pullChanges)
       changes, // valid changes object (READ THIS TO UNDERSTAND WHAT IS GOING TO BE INSIDE THIS ONJ -> https://nozbe.github.io/WatermelonDB/Advanced/Sync.html#implementing-your-sync-backend)
     } = req.body;
+
+    console.log('Push Changes: ', lastPulledAt, changes);
 
     // The backend must only return the correct httpStatus, because watermelondb will use it to determine if the synchronization went well or if another synchronization must be done.
     return res.status(201).json();
