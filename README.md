@@ -8,6 +8,3 @@
 > yarn sequelize db:seed:all \
 > yarn dev
 
-## Rotas
-
-Se tudo ocorreu bem até aqui significa que a api está rodando, agora, para poder testar as rotas dessa aplicação basta importar o arquivo imsomnia.json na raíz do projeto para o seu imsomnia.
